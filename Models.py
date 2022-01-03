@@ -216,6 +216,22 @@ def construct_model(type):
         layer.trainable = False
       for layer in base_model.layers[17:]:
         layer.trainable = True
+    
+    elif type =='ResNet101':
+      from keras.applications.resnet import ResNet101
+      from keras.layers import GlobalMaxPooling2D
+
+      base_model = ResNet101(include_top=False)
+      print('----------------------------- ',len(base_model.layers),'---------------------------')
+      x = base_model.output
+      x = GlobalMaxPooling2D()(x)
+      x = Dense(1024, activation='relu')(x)
+      predictions = Dense(getClassesNum(), activation='softmax')(x)
+      model = Model(inputs=base_model.input, outputs=predictions)
+      for layer in base_model.layers[0:343]:
+        layer.trainable = False
+      for layer in base_model.layers[343:]:
+        layer.trainable = True
        
     model.compile(optimizer = 'adam', loss = 'categorical_crossentropy', metrics = ['accuracy'])
     model.summary()
@@ -229,8 +245,11 @@ def construct_model(type):
 # model = construct_model('ResNet50')
 # print('VGG19')
 # model = construct_model('VGG19')
-print('VGG16')
-model = construct_model('VGG16')
+# print('VGG16')
+# model = construct_model('VGG16')
+print('ResNet101')
+model = construct_model('ResNet101')
+
 
 
 
