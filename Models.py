@@ -140,7 +140,7 @@ from keras.applications.inception_resnet_v2 import preprocess_input, decode_pred
 from keras.applications.vgg16 import VGG16
 
 def construct_model(type):
-    if type == 'Native':
+    if type == 'CNN':
       model = Sequential()
       model.add(Conv2D(32, (2, 2), input_shape=(image_size[0],image_size[1], 3), activation='relu'))
       model.add(MaxPool2D(pool_size=(2, 2)))
@@ -239,6 +239,8 @@ def construct_model(type):
 
     return model
 
+# print('CNN')
+# model = construct_model('CNN')
 # print('InceptionResNetV2')
 # model = construct_model('InceptionResNetV2')
 # print('ResNet50')
