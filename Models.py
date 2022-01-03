@@ -131,6 +131,7 @@ x_train, x_test, y_train, y_test  = split_dataset()
 print('training data: ',len(x_train))
 print('testing data: ',len(x_test))
 
+'''######################### Training Models ############'''
 from keras.applications.vgg19 import VGG19
 from keras.applications.resnet import ResNet
 from keras.applications.densenet import DenseNet121
@@ -185,6 +186,21 @@ def construct_model(type):
         layer.trainable = False
       for layer in base_model.layers[173:]:
         layer.trainable = True
+    
+    elif type == 'VGG19':
+      from keras.layers import GlobalMaxPooling2D
+
+      base_model = VGG19(include_top=False)
+      print('----------------------------- ',len(base_model.layers),'---------------------------')
+      x = base_model.output
+      x = GlobalMaxPooling2D()(x)
+      x = Dense(1024, activation='relu')(x)
+      predictions = Dense(getClassesNum(), activation='softmax')(x)
+      model = Model(inputs=base_model.input, outputs=predictions)
+      for layer in base_model.layers[0:20]:
+        layer.trainable = False
+      for layer in base_model.layers[22:]:
+        layer.trainable = True
        
     model.compile(optimizer = 'adam', loss = 'categorical_crossentropy', metrics = ['accuracy'])
     model.summary()
@@ -194,8 +210,10 @@ def construct_model(type):
 
 # print('InceptionResNetV2')
 # model = construct_model('InceptionResNetV2')
-print('ResNet50')
-model = construct_model('ResNet50')
+# print('ResNet50')
+# model = construct_model('ResNet50')
+print('VGG19')
+model = construct_model('VGG19')
 
 
 '''######################## Initializing Training Callbacks ########################'''
