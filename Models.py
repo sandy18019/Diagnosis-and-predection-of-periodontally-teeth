@@ -170,14 +170,33 @@ def construct_model(type):
       for layer in base_model.layers[778:]:
         layer.trainable = True
 
+    elif type == 'ResNet50':
+      from keras.applications.resnet import ResNet50
+      from keras.layers import GlobalMaxPooling2D
+
+      base_model = ResNet50(include_top=False)
+      print('----------------------------- ',len(base_model.layers),'---------------------------')
+      x = base_model.output
+      x = GlobalMaxPooling2D()(x)
+      x = Dense(1024, activation='relu')(x)
+      predictions = Dense(getClassesNum(), activation='softmax')(x)
+      model = Model(inputs=base_model.input, outputs=predictions)
+      for layer in base_model.layers[0:173]:
+        layer.trainable = False
+      for layer in base_model.layers[173:]:
+        layer.trainable = True
+       
     model.compile(optimizer = 'adam', loss = 'categorical_crossentropy', metrics = ['accuracy'])
     model.summary()
   
 
     return model
 
-print('InceptionResNetV2')
-model = construct_model('InceptionResNetV2')
+# print('InceptionResNetV2')
+# model = construct_model('InceptionResNetV2')
+print('ResNet50')
+model = construct_model('ResNet50')
+
 
 '''######################## Initializing Training Callbacks ########################'''
 def init_callbacks():
