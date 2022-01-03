@@ -25,9 +25,8 @@ from sklearn.metrics import classification_report,confusion_matrix,accuracy_scor
 from  matplotlib import pyplot as plt
 
 %matplotlib inline
-
-[7:44 pm, 03/01/2022] lala : %matplotlib inline
-[7:44 pm, 03/01/2022] lala : image_dir ='/content/dataset'
+%matplotlib inline
+lala : image_dir ='/content/dataset'
 base_path = '/content/model_weights/'
 perio_path='/content/dataset/Periodontal/'
 non_perio_path='/content/dataset/Non-periodontal'
@@ -155,8 +154,6 @@ def construct_model(type):
       model.add(Dense(32, activation='relu'))
       model.add(Dense(getClassesNum(), activation='softmax'))
       
-      print('CNN')
-      model = construct_model('CNN')
     
     elif type == 'DenseNet121':
       from keras.applications.xception import Xception
@@ -179,6 +176,9 @@ def construct_model(type):
   
 
     return model
+
+#print('CNN')
+#model = construct_model('CNN')
 
 print('DenseNet121')
 model = construct_model('DenseNet121')
