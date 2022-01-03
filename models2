@@ -178,6 +178,22 @@ def construct_model(type):
       for layer in base_model.layers[705:]:
         layer.trainable = True
         
+    elif type == 'ResNet152':
+        from keras.applications.resnet import ResNet152
+        from keras.layers import GlobalAveragePooling2D
+        base_model = ResNet152(include_top=False)
+        print('------------------------------ ',len(base_model.layers))
+        for layer in base_model.layers[0:513]:
+           layer.trainable = False
+        for layer in base_model.layers[513:]:
+           layer.trainable = True  
+        x = base_model.output
+        x = GlobalAveragePooling2D()(x)
+        x = Dense(128, activation='relu')(x) 
+        x = Dense(64, activation='relu')(x) 
+        predictions = Dense(getClassesNum(), activation='softmax')(x)
+        model = Model(inputs=base_model.input, outputs=predictions)
+        
     model.compile(optimizer = 'RMSprop', loss = 'categorical_crossentropy', metrics = ['accuracy'])
     model.summary()
 
@@ -185,8 +201,8 @@ def construct_model(type):
 
 #model = construct_model('InceptionV3')
 #model = construct_model('DenseNet169')
-model = construct_model('DenseNet201')  
-
+#model = construct_model('DenseNet201')  
+model = construct_model('ResNet152')
 '''######################## Initializing Training Callbacks ########################'''
 def init_callbacks():
     from keras.callbacks import CSVLogger, ModelCheckpoint, EarlyStopping, ReduceLROnPlateau
