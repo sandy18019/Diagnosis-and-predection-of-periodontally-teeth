@@ -164,13 +164,28 @@ def construct_model(type):
       for layer in base_model.layers[200:]:
         layer.trainable = True
         
+    elif type=='DenseNet201':
+      from keras.layers import GlobalAveragePooling2D
+      base_model = DenseNet201(include_top=False)
+      print(len(base_model.layers))
+      x = base_model.output
+      x = GlobalAveragePooling2D()(x)
+      x = Dense(1024, activation='relu')(x)
+      predictions = Dense(getClassesNum(), activation='softmax')(x)
+      model = Model(inputs=base_model.input, outputs=predictions)
+      for layer in base_model.layers[0:705]:
+        layer.trainable = False
+      for layer in base_model.layers[705:]:
+        layer.trainable = True
+        
     model.compile(optimizer = 'RMSprop', loss = 'categorical_crossentropy', metrics = ['accuracy'])
     model.summary()
 
     return model
 
 #model = construct_model('InceptionV3')
-model = construct_model('DenseNet169')
+#model = construct_model('DenseNet169')
+model = construct_model('DenseNet201')  
 
 '''######################## Initializing Training Callbacks ########################'''
 def init_callbacks():
