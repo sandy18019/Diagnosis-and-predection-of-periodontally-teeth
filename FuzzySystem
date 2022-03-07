@@ -793,3 +793,112 @@ class FuzzyLogic:
         self.set_bl_low(low_start, low_mid, low_stop)
         self.set_bl_nor(nor_start, nor_mid, nor_stop)
         self.set_bl_high(high_start, high_mid, high_stop) 
+        
+   
+    def set_tl_low(self, start, mid, stop):
+        self.set_tl_low_start(start)
+        self.set_tl_low_mid(mid)
+        self.set_tl_low_stop(stop)
+
+    def set_tl_nor(self, start, mid, stop):
+        self.set_tl_nor_start(start)
+        self.set_tl_nor_mid(mid)
+        self.set_tl_nor_stop(stop)
+
+    def set_tl_high(self, start, mid, stop):
+        self.set_tl_high_start(start)
+        self.set_tl_high_mid(mid)
+        self.set_tl_high_stop(stop)
+
+    def set_tl(self, low_start, low_mid, low_stop, nor_start, nor_mid, nor_stop, high_start, high_mid,
+               high_stop):
+        self.set_tl_low(low_start, low_mid, low_stop)
+        self.set_tl_nor(nor_start, nor_mid, nor_stop)
+        self.set_tl_high(high_start, high_mid, high_stop)
+
+    def set_pd_low(self, start, mid, stop):
+        self.set_pd_low_start(start)
+        self.set_pd_low_mid(mid)
+        self.set_pd_low_stop(stop)
+
+    def set_pd_nor(self, start, mid, stop):
+        self.set_pd_nor_start(start)
+        self.set_pd_nor_mid(mid)
+        self.set_pd_nor_stop(stop)
+
+    def set_pd_high(self, start, mid, stop):
+        self.set_pd_high_start(start)
+        self.set_pd_high_mid(mid)
+        self.set_pd_high_stop(stop)
+
+    def set_pd(self, low_start, low_mid, low_stop, nor_start, nor_mid, nor_stop, high_start, high_mid, high_stop):
+        self.set_pd_low(low_start, low_mid, low_stop)
+        self.set_pd_nor(nor_start, nor_mid, nor_stop)
+        self.set_pd_high(high_start, high_mid, high_stop)
+
+    def set_o_mild(self, start, mid, stop):
+        self.set_o_mild_start(start)
+        self.set_o_mild_mid(mid)
+        self.set_o_mild_stop(stop)
+
+    def set_o_mod(self, start, mid, stop):
+        self.set_o_mod_start(start)
+        self.set_o_mod_mid(mid)
+        self.set_o_mod_stop(stop)
+
+    def set_o_severe(self, start, mid, stop):
+        self.set_o_severe_start(start)
+        self.set_o_severe_mid(mid)
+        self.set_o_severe_stop(stop)
+
+    def set_o_adv(self, start, mid, stop):
+        self.set_o_adv_start(start)
+        self.set_o_adv_mid(mid)
+        self.set_o_adv_stop(stop)
+
+    def set_o(self, mild_start, mild_mid, mild_stop, mod_start, mod_mid, mod_stop, severe_start, severe_mid, severe_stop,adv_start, adv_mid,
+              adv_stop):
+        self.set_o_mild(mild_start, mild_mid, mild_stop)
+        self.set_o_mod(mod_start, mod_mid, mod_stop)
+        self.set_o_severe(severe_start, severe_mid, severe_stop)
+        self.set_o_adv(adv_start, adv_mid, adv_stop)
+
+
+    def simulate(self, cal_val, bl_val, tl_val, pd_val):
+        """
+        :param bmi_val: body mass index value , int or float
+        :param bf_val: body fat value, int or float
+        :param wc_val: waist circuference value, int or float
+        :return: res: a string store step by step instructions how the fuzzy controler infer
+        res is stored in result.txt
+        """
+        perio_ctrl_sil = skfuzzy.control.ControlSystemSimulation(self.__perio_ctrl)
+        perio_ctrl_sil.input['CAL'] = cal_val
+        perio_ctrl_sil.input['BL'] = bl_val
+        perio_ctrl_sil.input['TL'] = tl_val
+        perio_ctrl_sil.input['PD'] = pd_val
+        perio_ctrl_sil.compute()
+        self.res = perio_ctrl_sil.print_state()
+        self.output = list(perio_ctrl_sil.output.items())[0][1]
+        print(self.output)
+        
+
+        # def get_result():
+        #    file = open("result.txt", "r")
+        #    return file.read()
+        # return get_result()
+        print(perio_ctrl_sil.output)
+        print(self.res)
+
+if __name__ == '__main__':
+    fuzzy_system = FuzzyLogic(1, 7, 1, 100, 0.2, 15, 1, 15, 1, 15)
+    fuzzy_system.set_cal(1, 1.7, 2.4, 2.5, 3.5, 4.4, 4.5, 5.5, 7)
+    fuzzy_system.set_bl(1, 7, 14, 15, 22, 33, 34, 60, 100)
+    fuzzy_system.set_tl(0.2,0.4, 0.5, 1, 2, 4, 5, 10, 15)
+    fuzzy_system.set_pd(1,2,4,4.1,4.6,5,5.1,7,15)
+    fuzzy_system.set_o(1, 2.5,4, 4.1,4.6,5, 5.1,5.6 ,6, 7, 10,15)
+    fuzzy_system.make_variables()
+    fuzzy_system.make_member_functions()
+    fuzzy_system.make_rules()
+
+    fuzzy_system.simulate(1,10,0.2,1)
