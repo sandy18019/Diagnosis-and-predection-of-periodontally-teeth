@@ -1,0 +1,40 @@
+import numpy as np
+import skfuzzy as fuzz
+import skfuzzy.control
+from skfuzzy import *
+
+class FuzzyLogic:
+
+    def __init__(self, cal_start=0, cal_stop=10, bl_start=0, bl_stop=10, tl_start=0, tl_stop=10, pd_start=0, pd_stop=10, o_start=0, o_stop=10):
+        """
+        constructor that assign the start/stop values 
+        and feed them to the make_variables() func.
+        """
+        self.__cal_start = cal_start
+        self.__cal_stop = cal_stop
+        self.__bl_start = bl_start
+        self.__bl_stop = bl_stop
+        self.__tl_start = tl_start
+        self.__tl_stop = tl_stop
+        self.__pd_start = pd_start
+        self.__pd_stop = pd_stop
+        self.__o_start = o_start
+        self.__o_stop = o_stop
+
+    def make_variables(self):
+        """ engine
+            step 1: create input, output variables
+        :return:
+        """
+        self.__cal = skfuzzy.control.Antecedent(np.arange(self.__cal_start, self.__cal_stop),
+                                                'CAL')  # input variable Clinical attachement loss
+        self.__bl = skfuzzy.control.Antecedent(np.arange(self.__bl_start, self.__bl_stop),
+                                               'BL')  # input variable bone loss
+        self.__tl = skfuzzy.control.Antecedent(np.arange(self.__tl_start, self.__tl_stop),
+                                               'TL')  # input variable teeth loss
+        self.__pd = skfuzzy.control.Antecedent(np.arange(self.__pd_start, self.__pd_stop),
+                                               'PD')  # input variable probing depth
+        # self.__x = skfuzzy.control.Antecedent(np.arange(self.__x_start, self.__x_stop),
+        #                                        'X')   #input variable bone loss axis(horizontal/vertical)
+        self.__perio = skfuzzy.control.Consequent(np.arange(self.__o_start, self.__o_stop),
+                                                    'PS')
