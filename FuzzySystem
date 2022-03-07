@@ -726,3 +726,31 @@ class FuzzyLogic:
                                       self.__tl['normal'] &
                                       self.__pd['high'],
                                       self.__perio['advanced'])
+        
+        rule85 = skfuzzy.control.Rule(self.__cal['high'] &
+                                      self.__bl['high'] &
+                                      self.__tl['high'] &
+                                      self.__pd['low'],
+                                      self.__perio['advanced'])
+
+        rule86 = skfuzzy.control.Rule(self.__cal['high'] &
+                                      self.__bl['high'] &
+                                      self.__tl['high'] &
+                                      self.__pd['normal'],
+                                      self.__perio['advanced'])
+
+
+        rule87 = skfuzzy.control.Rule(self.__cal['high'] &
+                                      self.__bl['high'] &
+                                      self.__tl['high'] &
+                                      self.__pd['high'],
+                                      self.__perio['advanced'])
+        
+        """
+            step 4: create a control system
+        """
+        self.__rules = []
+        for i in range(1, 88):
+            self.__rules.append(eval("rule" + str(i)))
+            self.__perio_ctrl = skfuzzy.control.ControlSystem(self.__rules)
+            self.__perio_ctrl.view()
