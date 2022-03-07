@@ -701,3 +701,28 @@ class FuzzyLogic:
                                       self.__tl['low'] &
                                       self.__pd['normal'],
                                       self.__perio['severe'])
+        rule81 = skfuzzy.control.Rule(self.__cal['high'] &
+                                      self.__bl['high'] &
+                                      self.__tl['low'] &
+                                      self.__pd['high'],
+                                      self.__perio['advanced'])
+
+
+        rule82 = skfuzzy.control.Rule(self.__cal['high'] &
+                                      self.__bl['high'] &
+                                      self.__tl['normal'] &
+                                      self.__pd['low'],
+                                      self.__perio['severe'])        
+
+        rule83 = skfuzzy.control.Rule(self.__cal['high'] &
+                                      self.__bl['high'] &
+                                      self.__tl['normal'] &
+                                      self.__pd['normal'],
+                                      self.__perio['severe'])
+
+
+        rule84 = skfuzzy.control.Rule(self.__cal['high'] &
+                                      self.__bl['high'] &
+                                      self.__tl['normal'] &
+                                      self.__pd['high'],
+                                      self.__perio['advanced'])
