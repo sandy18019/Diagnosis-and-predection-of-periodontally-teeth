@@ -258,3 +258,19 @@ class FuzzyLogic:
         self.set_o_mod(mod_start, mod_mid, mod_stop)
         self.set_o_severe(severe_start, severe_mid, severe_stop)
         self.set_o_adv(adv_start, adv_mid, adv_stop)
+
+    def __init__(self, cal_start=0, cal_stop=10, bl_start=0, bl_stop=10, tl_start=0, tl_stop=10, pd_start=0, pd_stop=10, o_start=0, o_stop=10):
+        """
+        constructor that assign the start/stop values 
+        and feed them to the make_variables() func.
+        """
+        self.__cal_start = cal_start
+        self.__cal_stop = cal_stop
+        self.__bl_start = bl_start
+        self.__bl_stop = bl_stop
+        self.__tl_start = tl_start
+        self.__tl_stop = tl_stop
+        self.__pd_start = pd_start
+        self.__pd_stop = pd_stop
+        self.__o_start = o_start
+        self.__o_stop = o_stop
