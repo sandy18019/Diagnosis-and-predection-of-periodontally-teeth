@@ -170,3 +170,23 @@ class FuzzyLogic:
         self.set_cal_low(low_start, low_mid, low_stop)
         self.set_cal_nor(nor_start, nor_mid, nor_stop)
         self.set_cal_high(high_start, high_mid, high_stop)
+    
+    def set_bl_low(self, start, mid, stop):
+        self.set_bl_low_start(start)
+        self.set_bl_low_mid(mid)
+        self.set_bl_low_stop(stop)
+
+    def set_bl_nor(self, start, mid, stop):
+        self.set_bl_nor_start(start)
+        self.set_bl_nor_mid(mid)
+        self.set_bl_nor_stop(stop)
+
+    def set_bl_high(self, start, mid, stop):
+        self.set_bl_high_start(start)
+        self.set_bl_high_mid(mid)
+        self.set_bl_high_stop(stop)
+
+    def set_bl(self, low_start, low_mid, low_stop, nor_start, nor_mid, nor_stop, high_start, high_mid, high_stop):
+        self.set_bl_low(low_start, low_mid, low_stop)
+        self.set_bl_nor(nor_start, nor_mid, nor_stop)
+        self.set_bl_high(high_start, high_mid, high_stop)
