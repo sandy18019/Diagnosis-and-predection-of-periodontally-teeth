@@ -292,3 +292,32 @@ class FuzzyLogic:
         #                                        'X')   #input variable bone loss axis(horizontal/vertical)
         self.__perio = skfuzzy.control.Consequent(np.arange(self.__o_start, self.__o_stop),
                                                     'PS')  # output variable PS = Periodontal Stage
+    
+    def make_member_functions(self):
+        """
+            step 2: create member functions
+        :return:
+        """
+        self.__cal['low'] = fuzz.trimf(self.__cal.universe,
+                                       [self.__cal_low_start, self.__cal_low_mid, self.__cal_low_stop])
+        self.__cal['normal'] = fuzz.piecemf(self.__cal.universe,
+                                            [self.__cal_nor_start, self.__cal_nor_mid, self.__cal_nor_stop])
+        self.__cal['high'] = fuzz.trimf(self.__cal.universe,
+                                        [self.__cal_high_start, self.__cal_high_mid, self.__cal_high_stop])
+        self.__bl['low'] = fuzz.trimf(self.__bl.universe, [self.__bl_low_start, self.__bl_low_mid, self.__bl_low_stop])
+        self.__bl['normal'] = fuzz.trimf(self.__bl.universe,
+                                         [self.__bl_nor_start, self.__bl_nor_mid, self.__bl_nor_stop])
+        self.__bl['high'] = fuzz.trimf(self.__bl.universe,
+                                       [self.__bl_high_start, self.__bl_high_mid, self.__bl_high_stop])
+        self.__tl['low'] = fuzz.trimf(self.__tl.universe,
+                                        [self.__tl_low_start, self.__tl_low_mid, self.__tl_low_stop])
+        self.__tl['normal'] = fuzz.trimf(self.__tl.universe,
+                                         [self.__tl_nor_start, self.__tl_nor_mid, self.__tl_nor_stop])
+        self.__tl['high'] = fuzz.trimf(self.__tl.universe,
+                                        [self.__tl_high_start, self.__tl_high_mid, self.__tl_high_stop])
+        self.__pd['low'] = fuzz.trimf(self.__pd.universe, [self.__pd_low_start, self.__pd_low_mid, self.__pd_low_stop])
+        self.__pd['normal'] = fuzz.trimf(self.__pd.universe,
+                                         [self.__pd_nor_start, self.__pd_nor_mid, self.__pd_nor_stop])
+        self.__pd['high'] = fuzz.trimf(self.__pd.universe,
+                                       [self.__pd_high_start, self.__pd_high_mid, self.__pd_high_stop])
+        
