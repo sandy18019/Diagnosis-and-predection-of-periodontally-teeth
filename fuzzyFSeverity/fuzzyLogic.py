@@ -231,3 +231,30 @@ class FuzzyLogic:
         self.set_pd_low(low_start, low_mid, low_stop)
         self.set_pd_nor(nor_start, nor_mid, nor_stop)
         self.set_pd_high(high_start, high_mid, high_stop)
+
+    def set_o_mild(self, start, mid, stop):
+        self.set_o_mild_start(start)
+        self.set_o_mild_mid(mid)
+        self.set_o_mild_stop(stop)
+
+    def set_o_mod(self, start, mid, stop):
+        self.set_o_mod_start(start)
+        self.set_o_mod_mid(mid)
+        self.set_o_mod_stop(stop)
+
+    def set_o_severe(self, start, mid, stop):
+        self.set_o_severe_start(start)
+        self.set_o_severe_mid(mid)
+        self.set_o_severe_stop(stop)
+
+    def set_o_adv(self, start, mid, stop):
+        self.set_o_adv_start(start)
+        self.set_o_adv_mid(mid)
+        self.set_o_adv_stop(stop)
+
+    def set_o(self, mild_start, mild_mid, mild_stop, mod_start, mod_mid, mod_stop, severe_start, severe_mid, severe_stop,adv_start, adv_mid,
+              adv_stop):
+        self.set_o_mild(mild_start, mild_mid, mild_stop)
+        self.set_o_mod(mod_start, mod_mid, mod_stop)
+        self.set_o_severe(severe_start, severe_mid, severe_stop)
+        self.set_o_adv(adv_start, adv_mid, adv_stop)
