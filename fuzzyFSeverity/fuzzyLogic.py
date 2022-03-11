@@ -85,3 +85,23 @@ class FuzzyLogic:
     def set_tl_high_mid(self, mid):
         self.__tl_high_mid = mid
 
+    def set_tl_high_stop(self, stop):
+        self.__tl_high_stop = stop
+
+    def set_pd_low_start(self, start):
+        self.__pd_low_start = start
+
+    def set_pd_low_mid(self, mid):
+        self.__pd_low_mid = mid
+
+    def set_pd_low_stop(self, stop):
+        self.__pd_low_stop = stop
+
+    def set_pd_nor_start(self, start):
+        self.__pd_nor_start = start
+
+    def set_pd_nor_mid(self, mid):
+        self.__pd_nor_mid = mid
+
+    def set_pd_nor_stop(self, stop):
+        self.__pd_nor_stop = stop
