@@ -636,4 +636,124 @@ class FuzzyLogic:
                                       self.__tl['normal'] &
                                       self.__pd['low'],
                                       self.__perio['moderate'])
+        
+        rule41 = skfuzzy.control.Rule(self.__cal['normal'] &
+                                      self.__bl['high'] &
+                                      self.__tl['normal'] &
+                                      self.__pd['normal'],
+                                      self.__perio['severe']) #
+
+        rule42 = skfuzzy.control.Rule(self.__cal['normal'] &
+                                      self.__bl['high'] &
+                                      self.__tl['normal'] &
+                                      self.__pd['high'],
+                                      self.__perio['advanced'])    #
+
+        # rule54 = skfuzzy.control.Rule(self.__cal['normal'] &
+        #                               self.__bl['high'] &
+        #                               self.__tl['high'] &
+        #                               self.__pd['low'],
+        #                               self.__perio['severe'])
+
+        rule43 = skfuzzy.control.Rule(self.__cal['normal'] &
+                                      self.__bl['high'] &
+                                      self.__tl['high'] &
+                                      self.__pd['normal'],
+                                      self.__perio['severe'])  
+
+        rule44 = skfuzzy.control.Rule(self.__cal['normal'] &
+                                      self.__bl['high'] &
+                                      self.__tl['high'] &
+                                      self.__pd['high'],
+                                      self.__perio['advanced'])
+
+        # rule57 = skfuzzy.control.Rule(self.__cal['high'] &
+        #                               self.__bl['low'] &
+        #                               self.__tl['low'] &
+        #                               self.__pd['low'],
+        #                               self.__perio['moderate'])
+
+        rule45 = skfuzzy.control.Rule(self.__cal['high'] &
+                                      self.__bl['low'] &
+                                      self.__tl['low'] &
+                                      self.__pd['normal'],
+                                      self.__perio['moderate'])#
+
+        # rule59 = skfuzzy.control.Rule(self.__cal['high'] &
+        #                               self.__bl['low'] &
+        #                               self.__tl['low'] &
+        #                               self.__pd['high'],
+        #                               self.__perio['advanced'])
+
+        # rule60 = skfuzzy.control.Rule(self.__cal['high'] &
+        #                               self.__bl['low'] &
+        #                               self.__tl['normal'] &
+        #                               self.__pd['low'],
+        #                               self.__perio['moderate'])
+
+        # rule61 = skfuzzy.control.Rule(self.__cal['high'] &
+        #                               self.__bl['low'] &
+        #                               self.__tl['normal'] &
+        #                               self.__pd['normal'],
+        #                               self.__perio['severe'])
+
+        # rule62 = skfuzzy.control.Rule(self.__cal['high'] &
+        #                               self.__bl['low'] &
+        #                               self.__tl['normal'] &
+        #                               self.__pd['high'],
+        #                               self.__perio['severe'])
+
+        # rule63 = skfuzzy.control.Rule(self.__cal['high'] &
+        #                               self.__bl['low'] &
+        #                               self.__tl['high'] &
+        #                               self.__pd['low'],
+        #                               self.__perio['moderate'])
+
+        # rule64 = skfuzzy.control.Rule(self.__cal['high'] &
+        #                               self.__bl['low'] &
+        #                               self.__tl['high'] &
+        #                               self.__pd['normal'],
+        #                               self.__perio['severe'])
+
+        # rule65 = skfuzzy.control.Rule(self.__cal['high'] &
+        #                               self.__bl['low'] &
+        #                               self.__tl['high'] &
+        #                               self.__pd['high'],
+        #                               self.__perio['advanced'])
+
+        # rule66 = skfuzzy.control.Rule(self.__cal['high'] &
+        #                               self.__bl['normal'] &
+        #                               self.__tl['low'] &
+        #                               self.__pd['low'],
+        #                               self.__perio['moderate'])
+
+        rule46 = skfuzzy.control.Rule(self.__cal['high'] &
+                                      self.__bl['normal'] &
+                                      self.__tl['low'] &
+                                      self.__pd['normal'],
+                                      self.__perio['moderate'])  #
+
+        rule47 = skfuzzy.control.Rule(self.__cal['high'] &
+                                      self.__bl['normal'] &
+                                      self.__tl['low'] &
+                                      self.__pd['high'],
+                                      self.__perio['severe'])
+
+        # rule69 = skfuzzy.control.Rule(self.__cal['high'] &
+        #                               self.__bl['normal'] &
+        #                               self.__tl['normal'] &
+        #                               self.__pd['low'],
+        #                               self.__perio['severe'])
+
+        rule48 = skfuzzy.control.Rule(self.__cal['high'] &
+                                      self.__bl['normal'] &
+                                      self.__tl['normal'] &
+                                      self.__pd['normal'],
+                                      self.__perio['severe'])
+
+        rule49 = skfuzzy.control.Rule(self.__cal['high'] &
+                                      self.__bl['normal'] &
+                                      self.__tl['normal'] &
+                                      self.__pd['high'],
+                                      self.__perio['advanced'])
 
