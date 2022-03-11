@@ -320,4 +320,11 @@ class FuzzyLogic:
                                          [self.__pd_nor_start, self.__pd_nor_mid, self.__pd_nor_stop])
         self.__pd['high'] = fuzz.trimf(self.__pd.universe,
                                        [self.__pd_high_start, self.__pd_high_mid, self.__pd_high_stop])
-        
+        self.__perio['mild'] = fuzz.trimf(self.__perio.universe,
+                                               [self.__o_mild_start, self.__o_mild_mid, self.__o_mild_stop])
+        self.__perio['moderate'] = fuzz.trimf(self.__perio.universe,
+                                                  [self.__o_mod_start, self.__o_mod_mid, self.__o_mod_stop])
+        self.__perio['severe'] = fuzz.trimf(self.__perio.universe,
+                                             [self.__o_severe_start, self.__o_severe_mid, self.__o_severe_stop])
+        self.__perio['advanced'] = fuzz.trimf(self.__perio.universe,
+                                             [self.__o_adv_start, self.__o_adv_mid, self.__o_adv_stop])
