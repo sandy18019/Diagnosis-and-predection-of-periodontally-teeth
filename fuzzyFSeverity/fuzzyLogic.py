@@ -6,150 +6,7 @@ from skfuzzy import *
 
 class FuzzyLogic:
 
-
-    def set_cal_low_start(self, start):
-        self.__cal_low_start = start
-
-    def set_cal_low_mid(self, mid):
-        self.__cal_low_mid = mid
-
-    def set_cal_low_stop(self, stop):
-        self.__cal_low_stop = stop
-
-    def set_cal_nor_start(self, start):
-        self.__cal_nor_start = start
-
-    def set_cal_nor_mid(self, mid):
-        self.__cal_nor_mid = mid
-
-    def set_cal_nor_stop(self, stop):
-        self.__cal_nor_stop = stop
-
-    def set_cal_high_start(self, start):
-        self.__cal_high_start = start
-
-    def set_cal_high_mid(self, mid):
-        self.__cal_high_mid = mid
-
-    def set_cal_high_stop(self, stop):
-        self.__cal_high_stop = stop
-
-    def set_bl_low_start(self, start):
-        self.__bl_low_start = start
-
-    def set_bl_low_mid(self, mid):
-        self.__bl_low_mid = mid
-
-    def set_bl_low_stop(self, stop):
-        self.__bl_low_stop = stop
-
-    def set_bl_nor_start(self, start):
-        self.__bl_nor_start = start
-
-    def set_bl_nor_mid(self, mid):
-        self.__bl_nor_mid = mid
-
-    def set_bl_nor_stop(self, stop):
-        self.__bl_nor_stop = stop
-
-    def set_bl_high_start(self, start):
-        self.__bl_high_start = start
-
-    def set_bl_high_mid(self, mid):
-        self.__bl_high_mid = mid
-
-    def set_bl_high_stop(self, stop):
-        self.__bl_high_stop = stop
-
-    def set_tl_low_start(self, start):
-        self.__tl_low_start = start
-
-    def set_tl_low_mid(self, mid):
-        self.__tl_low_mid = mid
-
-    def set_tl_low_stop(self, stop):
-        self.__tl_low_stop = stop
-
-    def set_tl_nor_start(self, start):
-        self.__tl_nor_start = start
-
-    def set_tl_nor_mid(self, mid):
-        self.__tl_nor_mid = mid
-
-    def set_tl_nor_stop(self, stop):
-        self.__tl_nor_stop = stop
-
-    def set_tl_high_start(self, start):
-        self.__tl_high_start = start
-
-    def set_tl_high_mid(self, mid):
-        self.__tl_high_mid = mid
-
-    def set_tl_high_stop(self, stop):
-        self.__tl_high_stop = stop
-
-    def set_pd_low_start(self, start):
-        self.__pd_low_start = start
-
-    def set_pd_low_mid(self, mid):
-        self.__pd_low_mid = mid
-
-    def set_pd_low_stop(self, stop):
-        self.__pd_low_stop = stop
-
-    def set_pd_nor_start(self, start):
-        self.__pd_nor_start = start
-
-    def set_pd_nor_mid(self, mid):
-        self.__pd_nor_mid = mid
-
-    def set_pd_nor_stop(self, stop):
-        self.__pd_nor_stop = stop
-
-    def set_pd_high_start(self, start):
-        self.__pd_high_start = start
-
-    def set_pd_high_mid(self, mid):
-        self.__pd_high_mid = mid
-
-    def set_pd_high_stop(self, stop):
-        self.__pd_high_stop = stop
-
-    def set_o_mild_start(self, start):
-        self.__o_mild_start = start
-
-    def set_o_mild_mid(self, mid):
-        self.__o_mild_mid = mid
-
-    def set_o_mild_stop(self, stop):
-        self.__o_mild_stop = stop
-
-    def set_o_mod_start(self, start):
-        self.__o_mod_start = start
-
-    def set_o_mod_mid(self, mid):
-        self.__o_mod_mid = mid
-
-    def set_o_mod_stop(self, stop):
-        self.__o_mod_stop = stop
     
-    def set_o_severe_start(self, start):
-        self.__o_severe_start = start
-
-    def set_o_severe_mid(self, mid):
-        self.__o_severe_mid = mid
-
-    def set_o_severe_stop(self, stop):
-        self.__o_severe_stop = stop
-
-    def set_o_adv_start(self, start):
-        self.__o_adv_start = start
-
-    def set_o_adv_mid(self, mid):
-        self.__o_adv_mid = mid
-
-    def set_o_adv_stop(self, stop):
-        self.__o_adv_stop = stop
 
     def set_cal_low(self, start, mid, stop):
         self.set_cal_low_start(start)
@@ -287,10 +144,106 @@ class FuzzyLogic:
                                                 'TL')  # input variable teeth loss
         self.__pd = skfuzzy.control.Antecedent(np.arange(self.__pd_start, self.__pd_stop),
                                                 'PD')  # input variable probing depth
-        # self.__x = skfuzzy.control.Antecedent(np.arange(self.__x_start, self.__x_stop),
-        #                                        'X')   #input variable bone loss axis(horizontal/vertical)
         self.__perio = skfuzzy.control.Consequent(np.arange(self.__o_start, self.__o_stop),
                                                     'PS')  # output variable PS = Periodontal Stage
+
+    def set_cal_low_start(self, start):
+        self.__cal_low_start = start
+    def set_cal_low_mid(self, mid):
+        self.__cal_low_mid = mid
+    def set_cal_low_stop(self, stop):
+        self.__cal_low_stop = stop
+    def set_cal_nor_start(self, start):
+        self.__cal_nor_start = start
+    def set_cal_nor_mid(self, mid):
+        self.__cal_nor_mid = mid
+    def set_cal_nor_stop(self, stop):
+        self.__cal_nor_stop = stop
+    def set_cal_high_start(self, start):
+        self.__cal_high_start = start
+    def set_cal_high_mid(self, mid):
+        self.__cal_high_mid = mid
+    def set_cal_high_stop(self, stop):
+        self.__cal_high_stop = stop
+    def set_bl_low_start(self, start):
+        self.__bl_low_start = start
+    def set_bl_low_mid(self, mid):
+        self.__bl_low_mid = mid
+    def set_bl_low_stop(self, stop):
+        self.__bl_low_stop = stop
+    def set_bl_nor_start(self, start):
+        self.__bl_nor_start = start
+    def set_bl_nor_mid(self, mid):
+        self.__bl_nor_mid = mid
+    def set_bl_nor_stop(self, stop):
+        self.__bl_nor_stop = stop
+    def set_bl_high_start(self, start):
+        self.__bl_high_start = start
+    def set_bl_high_mid(self, mid):
+        self.__bl_high_mid = mid
+    def set_bl_high_stop(self, stop):
+        self.__bl_high_stop = stop
+    def set_tl_low_start(self, start):
+        self.__tl_low_start = start
+    def set_tl_low_mid(self, mid):
+        self.__tl_low_mid = mid
+    def set_tl_low_stop(self, stop):
+        self.__tl_low_stop = stop
+    def set_tl_nor_start(self, start):
+        self.__tl_nor_start = start
+    def set_tl_nor_mid(self, mid):
+        self.__tl_nor_mid = mid
+    def set_tl_nor_stop(self, stop):
+        self.__tl_nor_stop = stop
+    def set_tl_high_start(self, start):
+        self.__tl_high_start = start
+    def set_tl_high_mid(self, mid):
+        self.__tl_high_mid = mid
+    def set_tl_high_stop(self, stop):
+        self.__tl_high_stop = stop
+    def set_pd_low_start(self, start):
+        self.__pd_low_start = start
+    def set_pd_low_mid(self, mid):
+        self.__pd_low_mid = mid
+    def set_pd_low_stop(self, stop):
+        self.__pd_low_stop = stop
+    def set_pd_nor_start(self, start):
+        self.__pd_nor_start = start
+    def set_pd_nor_mid(self, mid):
+        self.__pd_nor_mid = mid
+    def set_pd_nor_stop(self, stop):
+        self.__pd_nor_stop = stop
+    def set_pd_high_start(self, start):
+        self.__pd_high_start = start
+    def set_pd_high_mid(self, mid):
+        self.__pd_high_mid = mid
+    def set_pd_high_stop(self, stop):
+        self.__pd_high_stop = stop
+    def set_o_mild_start(self, start):
+        self.__o_mild_start = start
+    def set_o_mild_mid(self, mid):
+        self.__o_mild_mid = mid
+    def set_o_mild_stop(self, stop):
+        self.__o_mild_stop = stop
+    def set_o_mod_start(self, start):
+        self.__o_mod_start = start
+    def set_o_mod_mid(self, mid):
+        self.__o_mod_mid = mid
+    def set_o_mod_stop(self, stop):
+        self.__o_mod_stop = stop
+    def set_o_severe_start(self, start):
+        self.__o_severe_start = start
+    def set_o_severe_mid(self, mid):
+        self.__o_severe_mid = mid
+    def set_o_severe_stop(self, stop):
+        self.__o_severe_stop = stop
+    def set_o_adv_start(self, start):
+        self.__o_adv_start = start
+    def set_o_adv_mid(self, mid):
+        self.__o_adv_mid = mid
+    def set_o_adv_stop(self, stop):
+        self.__o_adv_stop = stop
+
     
     def make_member_functions(self):
         """
@@ -369,12 +322,6 @@ class FuzzyLogic:
                                      self.__pd['normal'],
                                      self.__perio['severe'])
 
-        # rule7 = skfuzzy.control.Rule(self.__cal['low'] &
-        #                              self.__bl['low'] &
-        #                              self.__tl['low']&
-        #                              self.__pd['high'],
-        #                              self.__perio['advanced']) ###
-
         rule7 = skfuzzy.control.Rule(self.__cal['low'] &
                                      self.__bl['low'] &
                                      self.__tl['normal'] &
@@ -386,24 +333,6 @@ class FuzzyLogic:
                                      self.__tl['normal'] &
                                      self.__pd['normal'],
                                      self.__perio['severe'])
-
-        # rule10 = skfuzzy.control.Rule(self.__cal['low'] &
-        #                              self.__bl['low'] &
-        #                              self.__tl['high'] &
-        #                              self.__pd['low'],
-        #                              self.__perio['advanced'])
-
-        # rule11 = skfuzzy.control.Rule(self.__cal['low'] &
-        #                               self.__bl['low'] &
-        #                               self.__tl['high']&
-        #                               self.__pd['normal'],
-        #                               self.__perio['severe']) #??
-
-        # rule12 = skfuzzy.control.Rule(self.__cal['low'] &
-        #                               self.__bl['low'] &
-        #                               self.__tl['high']&
-        #                               self.__pd['high'],
-        #                               self.__perio['advanced'])
 
         rule9 = skfuzzy.control.Rule(self.__cal['low'] &
                                      self.__bl['normal'] &
@@ -452,35 +381,11 @@ class FuzzyLogic:
                                       self.__pd['normal'],
                                       self.__perio['severe'])
 
-        # rule21 = skfuzzy.control.Rule(self.__cal['low'] &
-        #                               self.__bl['normal'] &
-        #                               self.__tl['high'] &
-        #                               self.__pd['high'],
-        #                               self.__perio['advanced'])
-
-        # rule22 = skfuzzy.control.Rule(self.__cal['low'] &
-        #                               self.__bl['high'] &
-        #                               self.__tl['low'] &
-        #                               self.__pd['low'],
-        #                               self.__perio['moderate'])
-
         rule17 = skfuzzy.control.Rule(self.__cal['low'] &
                                       self.__bl['high'] &
                                       self.__tl['low'] &
                                       self.__pd['normal'],
                                       self.__perio['moderate'])
-
-        # rule24 = skfuzzy.control.Rule(self.__cal['low'] &
-        #                               self.__bl['low'] &
-        #                               self.__tl['normal'] &
-        #                               self.__pd['high'],
-        #                               self.__perio['severe']) ##
-
-        # rule25 = skfuzzy.control.Rule(self.__cal['low'] &
-        #                               self.__bl['high'] &
-        #                               self.__tl['low'] &
-        #                               self.__pd['high'],
-        #                               self.__perio['severe'])
 
         rule18 = skfuzzy.control.Rule(self.__cal['low'] &
                                       self.__bl['high'] &
@@ -494,12 +399,6 @@ class FuzzyLogic:
                                       self.__pd['normal'],
                                       self.__perio['severe'])
 
-        # rule28 = skfuzzy.control.Rule(self.__cal['low'] &
-        #                               self.__bl['high'] &
-        #                               self.__tl['normal'] &
-        #                               self.__pd['high'],
-        #                               self.__perio['severe'])
-
         rule20 = skfuzzy.control.Rule(self.__cal['low'] &
                                       self.__bl['high'] &
                                       self.__tl['high'] &
@@ -510,12 +409,6 @@ class FuzzyLogic:
                                       self.__tl['high'] &
                                       self.__pd['normal'],
                                       self.__perio['severe'])
-
-        # rule31 = skfuzzy.control.Rule(self.__cal['low'] &
-        #                               self.__bl['high'] &
-        #                               self.__tl['high'] &
-        #                               self.__pd['high'],
-        #                               self.__perio['advanced'])
 
         rule22 = skfuzzy.control.Rule(self.__cal['normal'] &
                                       self.__bl['low'] &
@@ -613,12 +506,6 @@ class FuzzyLogic:
                                       self.__pd['high'],
                                       self.__perio['severe'])
 
-        # rule48 = skfuzzy.control.Rule(self.__cal['normal'] &
-        #                               self.__bl['high'] &
-        #                               self.__tl['low'] &
-        #                               self.__pd['low'],
-        #                               self.__perio['moderate']) ##
-
         rule38 = skfuzzy.control.Rule(self.__cal['normal'] &
                                       self.__bl['high'] &
                                       self.__tl['low'] &
@@ -649,12 +536,6 @@ class FuzzyLogic:
                                       self.__pd['high'],
                                       self.__perio['advanced'])    #
 
-        # rule54 = skfuzzy.control.Rule(self.__cal['normal'] &
-        #                               self.__bl['high'] &
-        #                               self.__tl['high'] &
-        #                               self.__pd['low'],
-        #                               self.__perio['severe'])
-
         rule43 = skfuzzy.control.Rule(self.__cal['normal'] &
                                       self.__bl['high'] &
                                       self.__tl['high'] &
@@ -667,65 +548,11 @@ class FuzzyLogic:
                                       self.__pd['high'],
                                       self.__perio['advanced'])
 
-        # rule57 = skfuzzy.control.Rule(self.__cal['high'] &
-        #                               self.__bl['low'] &
-        #                               self.__tl['low'] &
-        #                               self.__pd['low'],
-        #                               self.__perio['moderate'])
-
         rule45 = skfuzzy.control.Rule(self.__cal['high'] &
                                       self.__bl['low'] &
                                       self.__tl['low'] &
                                       self.__pd['normal'],
-                                      self.__perio['moderate'])#
-
-        # rule59 = skfuzzy.control.Rule(self.__cal['high'] &
-        #                               self.__bl['low'] &
-        #                               self.__tl['low'] &
-        #                               self.__pd['high'],
-        #                               self.__perio['advanced'])
-
-        # rule60 = skfuzzy.control.Rule(self.__cal['high'] &
-        #                               self.__bl['low'] &
-        #                               self.__tl['normal'] &
-        #                               self.__pd['low'],
-        #                               self.__perio['moderate'])
-
-        # rule61 = skfuzzy.control.Rule(self.__cal['high'] &
-        #                               self.__bl['low'] &
-        #                               self.__tl['normal'] &
-        #                               self.__pd['normal'],
-        #                               self.__perio['severe'])
-
-        # rule62 = skfuzzy.control.Rule(self.__cal['high'] &
-        #                               self.__bl['low'] &
-        #                               self.__tl['normal'] &
-        #                               self.__pd['high'],
-        #                               self.__perio['severe'])
-
-        # rule63 = skfuzzy.control.Rule(self.__cal['high'] &
-        #                               self.__bl['low'] &
-        #                               self.__tl['high'] &
-        #                               self.__pd['low'],
-        #                               self.__perio['moderate'])
-
-        # rule64 = skfuzzy.control.Rule(self.__cal['high'] &
-        #                               self.__bl['low'] &
-        #                               self.__tl['high'] &
-        #                               self.__pd['normal'],
-        #                               self.__perio['severe'])
-
-        # rule65 = skfuzzy.control.Rule(self.__cal['high'] &
-        #                               self.__bl['low'] &
-        #                               self.__tl['high'] &
-        #                               self.__pd['high'],
-        #                               self.__perio['advanced'])
-
-        # rule66 = skfuzzy.control.Rule(self.__cal['high'] &
-        #                               self.__bl['normal'] &
-        #                               self.__tl['low'] &
-        #                               self.__pd['low'],
-        #                               self.__perio['moderate'])
+                                      self.__perio['moderate'])# 
 
         rule46 = skfuzzy.control.Rule(self.__cal['high'] &
                                       self.__bl['normal'] &
@@ -738,12 +565,6 @@ class FuzzyLogic:
                                       self.__tl['low'] &
                                       self.__pd['high'],
                                       self.__perio['severe'])
-
-        # rule69 = skfuzzy.control.Rule(self.__cal['high'] &
-        #                               self.__bl['normal'] &
-        #                               self.__tl['normal'] &
-        #                               self.__pd['low'],
-        #                               self.__perio['severe'])
 
         rule48 = skfuzzy.control.Rule(self.__cal['high'] &
                                       self.__bl['normal'] &
@@ -769,12 +590,6 @@ class FuzzyLogic:
                                       self.__pd['high'],
                                       self.__perio['advanced'])
 
-        # rule75 = skfuzzy.control.Rule(self.__cal['high'] &
-        #                               self.__bl['high'] &
-        #                               self.__tl['low'] &
-        #                               self.__pd['low'],
-        #                               self.__perio['severe'])
-
         rule52 = skfuzzy.control.Rule(self.__cal['high'] &
                                       self.__bl['high'] &
                                       self.__tl['low'] &
@@ -785,14 +600,7 @@ class FuzzyLogic:
                                       self.__bl['high'] &
                                       self.__tl['low'] &
                                       self.__pd['high'],
-                                      self.__perio['advanced'])
-
-
-        # rule78 = skfuzzy.control.Rule(self.__cal['high'] &
-        #                               self.__bl['high'] &
-        #                               self.__tl['normal'] &
-        #                               self.__pd['low'],
-        #                               self.__perio['severe'])        
+                                      self.__perio['advanced'])     
 
         rule54 = skfuzzy.control.Rule(self.__cal['high'] &
                                      self.__bl['high'] &
@@ -800,15 +608,146 @@ class FuzzyLogic:
                                      self.__pd['high'],
                                      self.__perio['advanced'])       
 
-        # rule80 = skfuzzy.control.Rule(self.__cal['high'] &
-        #                               self.__bl['high'] &
-        #                               self.__tl['high'] &
-        #                               self.__pd['low'],
-        #                               self.__perio['advanced'])
-
         rule55 = skfuzzy.control.Rule(self.__cal['high'] &
                                       self.__bl['high'] &
                                       self.__tl['high'] &
                                       self.__pd['normal'],
                                       self.__perio['advanced'])
+
+        #create control system
+        self.__rules = []
+        for i in range(1, 56):
+            self.__rules.append(eval("rule" + str(i)))
+            self.__perio_ctrl = skfuzzy.control.ControlSystem(self.__rules)
+            self.__perio_ctrl.view()
+        
+        #RULES TO BE CHECKED WITH EXPERTS
+        # rule7 = skfuzzy.control.Rule(self.__cal['low'] &
+        #                              self.__bl['low'] &
+        #                              self.__tl['low']&
+        #                              self.__pd['high'],
+        #                              self.__perio['advanced']) ###
+        # rule10 = skfuzzy.control.Rule(self.__cal['low'] &
+        #                              self.__bl['low'] &
+        #                              self.__tl['high'] &
+        #                              self.__pd['low'],
+        #                              self.__perio['advanced'])
+        # rule11 = skfuzzy.control.Rule(self.__cal['low'] &
+        #                               self.__bl['low'] &
+        #                               self.__tl['high']&
+        #                               self.__pd['normal'],
+        #                               self.__perio['severe']) #??
+        # rule12 = skfuzzy.control.Rule(self.__cal['low'] &
+        #                               self.__bl['low'] &
+        #                               self.__tl['high']&
+        #                               self.__pd['high'],
+        #                               self.__perio['advanced'])
+        # rule21 = skfuzzy.control.Rule(self.__cal['low'] &
+        #                               self.__bl['normal'] &
+        #                               self.__tl['high'] &
+        #                               self.__pd['high'],
+        #                               self.__perio['advanced'])
+        # rule22 = skfuzzy.control.Rule(self.__cal['low'] &
+        #                               self.__bl['high'] &
+        #                               self.__tl['low'] &
+        #                               self.__pd['low'],
+        #                               self.__perio['moderate'])
+        # rule24 = skfuzzy.control.Rule(self.__cal['low'] &
+        #                               self.__bl['low'] &
+        #                               self.__tl['normal'] &
+        #                               self.__pd['high'],
+        #                               self.__perio['severe']) ##
+        # rule25 = skfuzzy.control.Rule(self.__cal['low'] &
+        #                               self.__bl['high'] &
+        #                               self.__tl['low'] &
+        #                               self.__pd['high'],
+        #                               self.__perio['severe'])
+        # rule28 = skfuzzy.control.Rule(self.__cal['low'] &
+        #                               self.__bl['high'] &
+        #                               self.__tl['normal'] &
+        #                               self.__pd['high'],
+        #                               self.__perio['severe'])
+        # rule31 = skfuzzy.control.Rule(self.__cal['low'] &
+        #                               self.__bl['high'] &
+        #                               self.__tl['high'] &
+        #                               self.__pd['high'],
+        #                               self.__perio['advanced'])
+        
+        # rule48 = skfuzzy.control.Rule(self.__cal['normal'] &
+        #                               self.__bl['high'] &
+        #                               self.__tl['low'] &
+        #                               self.__pd['low'],
+        #                               self.__perio['moderate']) ##
+        # rule57 = skfuzzy.control.Rule(self.__cal['high'] &
+        #                               self.__bl['low'] &
+        #                               self.__tl['low'] &
+        #                               self.__pd['low'],
+        #                               self.__perio['moderate'])
+        # rule54 = skfuzzy.control.Rule(self.__cal['normal'] &
+        #                               self.__bl['high'] &
+        #                               self.__tl['high'] &
+        #                               self.__pd['low'],
+        #                               self.__perio['severe'])
+        # rule59 = skfuzzy.control.Rule(self.__cal['high'] &
+        #                               self.__bl['low'] &
+        #                               self.__tl['low'] &
+        #                               self.__pd['high'],
+        #                               self.__perio['advanced'])
+        # rule60 = skfuzzy.control.Rule(self.__cal['high'] &
+        #                               self.__bl['low'] &
+        #                               self.__tl['normal'] &
+        #                               self.__pd['low'],
+        #                               self.__perio['moderate'])
+        # rule61 = skfuzzy.control.Rule(self.__cal['high'] &
+        #                               self.__bl['low'] &
+        #                               self.__tl['normal'] &
+        #                               self.__pd['normal'],
+        #                               self.__perio['severe'])
+        # rule62 = skfuzzy.control.Rule(self.__cal['high'] &
+        #                               self.__bl['low'] &
+        #                               self.__tl['normal'] &
+        #                               self.__pd['high'],
+        #                               self.__perio['severe'])
+        # rule63 = skfuzzy.control.Rule(self.__cal['high'] &
+        #                               self.__bl['low'] &
+        #                               self.__tl['high'] &
+        #                               self.__pd['low'],
+        #                               self.__perio['moderate'])
+        # rule64 = skfuzzy.control.Rule(self.__cal['high'] &
+        #                               self.__bl['low'] &
+        #                               self.__tl['high'] &
+        #                               self.__pd['normal'],
+        #                               self.__perio['severe'])
+        # rule65 = skfuzzy.control.Rule(self.__cal['high'] &
+        #                               self.__bl['low'] &
+        #                               self.__tl['high'] &
+        #                               self.__pd['high'],
+        #                               self.__perio['advanced'])
+        # rule66 = skfuzzy.control.Rule(self.__cal['high'] &
+        #                               self.__bl['normal'] &
+        #                               self.__tl['low'] &
+        #                               self.__pd['low'],
+        #                               self.__perio['moderate'])
+        # rule69 = skfuzzy.control.Rule(self.__cal['high'] &
+        #                               self.__bl['normal'] &
+        #                               self.__tl['normal'] &
+        #                               self.__pd['low'],
+        #                               self.__perio['severe'])
+        # rule75 = skfuzzy.control.Rule(self.__cal['high'] &
+        #                               self.__bl['high'] &
+        #                               self.__tl['low'] &
+        #                               self.__pd['low'],
+        #                               self.__perio['severe'])
+        # rule78 = skfuzzy.control.Rule(self.__cal['high'] &
+        #                               self.__bl['high'] &
+        #                               self.__tl['normal'] &
+        #                               self.__pd['low'],
+        #                               self.__perio['severe'])  
+        # rule80 = skfuzzy.control.Rule(self.__cal['high'] &
+        #                               self.__bl['high'] &
+        #                               self.__tl['high'] &
+        #                               self.__pd['low'],
+        #                               self.__perio['advanced'])
+        
+        
 
