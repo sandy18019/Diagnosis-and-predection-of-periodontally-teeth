@@ -274,3 +274,21 @@ class FuzzyLogic:
         self.__pd_stop = pd_stop
         self.__o_start = o_start
         self.__o_stop = o_stop
+
+    def make_variables(self):
+        """ engine
+            step 1: create input, output variables
+        :return:
+        """
+        self.__cal = skfuzzy.control.Antecedent(np.arange(self.__cal_start, self.__cal_stop),
+                                                'CAL')  # input variable Clinical attachement loss
+        self.__bl = skfuzzy.control.Antecedent(np.arange(self.__bl_start, self.__bl_stop),
+                                               'BL')  # input variable bone loss
+        self.__tl = skfuzzy.control.Antecedent(np.arange(self.__tl_start, self.__tl_stop),
+                                                'TL')  # input variable teeth loss
+        self.__pd = skfuzzy.control.Antecedent(np.arange(self.__pd_start, self.__pd_stop),
+                                                'PD')  # input variable probing depth
+        # self.__x = skfuzzy.control.Antecedent(np.arange(self.__x_start, self.__x_stop),
+        #                                        'X')   #input variable bone loss axis(horizontal/vertical)
+        self.__perio = skfuzzy.control.Consequent(np.arange(self.__o_start, self.__o_stop),
+                                                    'PS')  # output variable PS = Periodontal Stage
