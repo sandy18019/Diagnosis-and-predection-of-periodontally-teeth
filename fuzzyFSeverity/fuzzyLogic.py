@@ -132,3 +132,21 @@ class FuzzyLogic:
 
     def set_o_mod_stop(self, stop):
         self.__o_mod_stop = stop
+    
+    def set_o_severe_start(self, start):
+        self.__o_severe_start = start
+
+    def set_o_severe_mid(self, mid):
+        self.__o_severe_mid = mid
+
+    def set_o_severe_stop(self, stop):
+        self.__o_severe_stop = stop
+
+    def set_o_adv_start(self, start):
+        self.__o_adv_start = start
+
+    def set_o_adv_mid(self, mid):
+        self.__o_adv_mid = mid
+
+    def set_o_adv_stop(self, stop):
+        self.__o_adv_stop = stop
