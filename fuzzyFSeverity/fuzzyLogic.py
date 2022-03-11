@@ -150,3 +150,23 @@ class FuzzyLogic:
 
     def set_o_adv_stop(self, stop):
         self.__o_adv_stop = stop
+
+    def set_cal_low(self, start, mid, stop):
+        self.set_cal_low_start(start)
+        self.set_cal_low_mid(mid)
+        self.set_cal_low_stop(stop)
+
+    def set_cal_nor(self, start, mid, stop):
+        self.set_cal_nor_start(start)
+        self.set_cal_nor_mid(mid)
+        self.set_cal_nor_stop(stop)
+
+    def set_cal_high(self, start, mid, stop):
+        self.set_cal_high_start(start)
+        self.set_cal_high_mid(mid)
+        self.set_cal_high_stop(stop)
+
+    def set_cal(self, low_start, low_mid, low_stop, nor_start, nor_mid, nor_stop, high_start, high_mid, high_stop):
+        self.set_cal_low(low_start, low_mid, low_stop)
+        self.set_cal_nor(nor_start, nor_mid, nor_stop)
+        self.set_cal_high(high_start, high_mid, high_stop)
