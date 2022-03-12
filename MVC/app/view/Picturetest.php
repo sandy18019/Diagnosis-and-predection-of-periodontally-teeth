@@ -11,7 +11,7 @@
     $db = mysqli_connect("localhost", "root", "", "photos");
   
         // Get all the submitted data from the form
-        $sql = "INSERT INTO image (filename) VALUES ('$filename')";
+        $sql = "INSERT INTO image (filename) VALUES ('$folder')";
   
         // Execute query
         mysqli_query($db, $sql);
@@ -25,8 +25,9 @@
   }
   $result = mysqli_query($db, "SELECT * FROM image");
 while($data = mysqli_fetch_array($result))
-{
-    <img src="<?php echo $data['Filename']; ?>";>
+{?>
+    <img src="<?php echo $data['Filename']; ?>">
+<?php
 }
     ?>
 <html lang="en">
