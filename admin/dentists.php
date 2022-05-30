@@ -17,7 +17,7 @@ REQUIRE_ONCE "../view/view.php";
     <link rel="stylesheet" href="https://cdn.datatables.net/1.10.22/css/dataTables.bootstrap4.min.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.2.6/css/responsive.bootstrap4.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
-    <title>Reports</title>
+    <title>Dentists</title>
 </head>
 
 <body>
@@ -61,11 +61,6 @@ REQUIRE_ONCE "../view/view.php";
                 </div>
             </nav>
 
-            <script type="text/javascript">
-			    function showMessage(){
-				 alert("Doctor has been deleted!!");
-			     }
-		    </script>
 
             <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4 bg-light">
                 <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
@@ -75,7 +70,7 @@ REQUIRE_ONCE "../view/view.php";
         $view= new view;
         $user =new users;
         $result=$user->alldoctors();
-        $view->viewdoctors($result);
+        $view->viewdentists($result);
 
                 ?>
 

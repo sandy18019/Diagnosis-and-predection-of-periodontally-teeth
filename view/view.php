@@ -165,7 +165,7 @@ public function viewcustomers($users)
 echo $str;
 }
 
-public function viewdoctors($users)
+public function viewdentists($users)
 {
     $str='';
     $str='                <div class="container">
@@ -181,8 +181,7 @@ public function viewdoctors($users)
                             <tr>
                             <th>Name</th>
                             <th>Email</th>
-                            <th>speciality</th>
-                            <th>experience level</th>
+
 
                             </tr>
                         </thead>
@@ -281,35 +280,5 @@ public function addDentists()
     echo $str;
 }
 
-public function addSlots(){
-    $str='';
-    $str='
-    <div class="card-body">
-        <form class="row g-3" method="POST" action="./controller/appcontroller.php?action=addSlots" enctype="multipart/form-data">
-            <div class="col-md-4">
-                <label for="inputCity" class="form-label">Day</label>
-                <input type="text" name="appday" class="form-control" id="inputCity">
-            </div>
-            <div class="col-md-4">
-                <label for="inputCity" class="form-label">time</label>
-                <input type="time" name="apptime" class="form-control" id="inputCity">
-            </div>
-                                        
-            <div class="col-md-4">
-               <label for="inputZip" class="form-label">Date</label>
-               <input type="date" name="appdate" class="form-control" id="inputZip">
-             </div>
-
-
-            <div class="">
-               <button class="btn btn-primary" name="submit" type="submit" style = "width: 150px; height: 50px; margin-top:20px;">Add</button>
-               <button class="btn btn-primary" name="submit" type="submit" onClick="viewSlots()" style = "width: 150px; height: 50px; margin-top:20px;margin-left:10px">view slots</button> 
-            </div>
-        </form>
-                                    
-                                    
-    </div>';
-echo $str;
-}
 
 }?>
