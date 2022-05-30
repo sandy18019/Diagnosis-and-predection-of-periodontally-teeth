@@ -207,6 +207,85 @@ public function viewdentists($users)
 echo $str;
 }
 
+public function viewpatients($users)
+{
+    $str='';
+    $str='                <div class="container">
+    <div class="row justify-content-md-center">
+        <div class="col-md-11">
+            <div class="card">
+                <div class="card-body">
+                    <table id="example" class="table  responsive nowrap  table-responsive-sm" style="width:100%">
+                        <thead>
+                            <tr>
+                            <th>Name</th>
+                            <th>phone Number</th>
+                            <th>number of visits</th>
+                            <th>dentist</th>
+                            </tr>
+                        </thead>
+                        <tbody>';
+            while($row=mysqli_fetch_assoc($users))
+            {
+                          $str.=' <tr>
+                             <td>'.$row['patientfname'].' '.$row['patientlname'].'</td>
+                             <td>'.$row['phonenumber'].'</td>
+                             <td>'.$row['numberVisits'].'</td>
+                             <td>'.$row['dentistfname'].' '.$row['dentistlname'].'</td>
+                            
+                           </tr>';
+            }
+                        $str.='</tbody>
+                    </table>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>';
+echo $str;
+}
+
+public function viewpatientsOfDoctor($users)
+{
+    $str='';
+    $str='                <div class="container">
+    <div class="row justify-content-md-center">
+        <div class="col-md-11">
+            <div class="card">
+                <div class="card-header bg-dark">
+                 Patient List
+                </div>
+                <div class="card-body">
+                    <table id="example" class="table  responsive nowrap  table-responsive-sm" style="width:100%">
+                        <thead>
+                            <tr>
+                            <th>Name</th>
+                            <th>phone Number</th>
+                            <th>number of visits</th>
+                            </tr>
+                        </thead>
+                        <tbody>';
+            while($row=mysqli_fetch_assoc($users))
+            {
+                          $str.=' <tr>
+                             <td>'.$row['patientfname'].' '.$row['patientlname'].'</td>
+                             <td>'.$row['phonenumber'].'</td>
+                             <td>'.$row['numberVisits'].'</td>
+                            
+                           </tr>';
+            }
+                        $str.='</tbody>
+                    </table>
+                </div>
+               
+            </div>
+        </div>
+    </div>
+</div>';
+echo $str;
+}
+
 public function edit()
 {
     $str='  <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4 bg-light">
@@ -254,7 +333,7 @@ public function addDentists()
     </div>
                  <div class="col-md-10 col-lg-10 ml-auto">
     <!-- Registeration Form -->
-    <form id="register-form" method="POST" action="controller/usercontroller.php?action=add">
+    <form id="register-form" method="POST" action="../controller/usercontroller.php?action=add">
         <div class="form-group col-lg-7 mb-2">
             <input type="text" name="name" class="form-control" placeholder="First Name" required>
         </div>

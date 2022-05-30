@@ -11,6 +11,7 @@ class patients{
     public $phonenumber;
     public $pass;
     public $ut_id;
+    public $dentistid;
     public $image;
     public $page;
     public $pat_id;
@@ -30,8 +31,8 @@ class patients{
     public function Addpatient(){
       $db = dbconnect::getInstance();
       $mysqli = $db->getConnection();
-      $query = "INSERT INTO patient (`email`,`fname`,`lname`,`ut_id`,`age`,`phonenumber`)
-      VALUES ('$this->email','$this->fname','$this->lname','2','$this->age','$this->phonenumber')";
+      $query = "INSERT INTO patient (`email`,`fname`,`lname`,`ut_id`,`age`,`phonenumber`,`dentistID`)
+      VALUES ('$this->email','$this->fname','$this->lname','2','$this->age','$this->phonenumber','$this->dentistid')";
       $result= $mysqli->query($query);
       if ($mysqli->query($query) === TRUE) {
         $last_id = $mysqli->insert_id;

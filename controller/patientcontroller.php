@@ -11,7 +11,7 @@ class patientcontroller{
 		$patient->lname= $_REQUEST['lname'];
 		$patient->age= $_REQUEST['age'];
         $patient->phonenumber= $_REQUEST['phonenumber'];
-        
+        $patient->dentistid= $_SESSION['id'];
 
         $patient->Addpatient();
         $patient->AddtoUser();
@@ -24,6 +24,7 @@ class patientcontroller{
         $photo = $_FILES['imageupload']['name'];
 		$patient->ImageDate= date('Y-m-d');
 		// $patient->PatientID= $_REQUEST['password'];
+
         move_uploaded_file($_FILES['imageupload']['tmp_name'], '../images/'.$photo);
         $output = shell_exec("conda activate base2 & python ../api/main.py $photo 2>&1");
         $output = (preg_split('/\s|\r\n|\r|\n/',$output));
@@ -40,16 +41,12 @@ class patientcontroller{
     public function check(){
         
         $patient = new patients;
-        // $CAL = $_FILES['numberFormat']['id'];
-        // $BONELOSS = $_FILES['numberFormat']['id'];
-        // $TEETHLOSS = $_FILES['numberFormat']['id'];
-        // $PD = $_FILES['numberFormat']['id'];
-        // $patient->ImageID= $_REQUEST['ImageID'];
 		$patient->PatientID= $_REQUEST['patientid'];
         $patient->CAL= $_REQUEST['CAL'];
 		$patient->BONELOSS= $_REQUEST['BL'];
 		$patient->TEETHLOSS= $_REQUEST['TL'];
 		$patient->PD= $_REQUEST['PD'];
+        //take measurments directly from the database to the python file
         $output = shell_exec("conda activate base2 & python ../api/fuzzy.py $patient->CAL $patient->BONELOSS $patient->TEETHLOSS $patient->PD 2>&1");
         $output = explode('--Results--',$output)[1];
         $output = trim($output);

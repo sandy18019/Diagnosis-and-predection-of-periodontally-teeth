@@ -1,4 +1,10 @@
 <html lang="en">
+<?php
+REQUIRE_ONCE "../model/users.php";
+REQUIRE_ONCE "../view/view.php";
+
+
+?>
 <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -62,11 +68,19 @@
                 <div class="container">
                     <div class="row justify-content-md-center">
                         <div class="col-md-11">
+<<<<<<< Updated upstream
                             <div class="card">
                                 <div class="card-header bg-dark">
                                    ---
                                 </div>
                                 <div class="card-body">
+=======
+                            <!-- <div class="card">
+                                <div class="card-header bg-primary">
+                                    Patients list
+                                </div> -->
+                                <!-- <div class="card-body">
+>>>>>>> Stashed changes
                                     <table id="example" class="table  responsive nowrap  table-responsive-sm" style="width:100%">
                                         <thead>
                                             <tr>
@@ -78,7 +92,14 @@
                                             </tr>
                                         </thead>
                                     </table>
-                                </div>
+                                </div> -->
+                                <?php
+        $view= new view;
+        $user =new users;
+        $result=$user->doctorspatients();
+        $view->viewpatientsOfDoctor($result);
+
+                ?>
                             </div>
                             <div class="text-center">
                                 <tfoot>

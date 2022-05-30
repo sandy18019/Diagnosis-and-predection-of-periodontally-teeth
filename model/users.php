@@ -34,6 +34,13 @@ class users{
         $query = "INSERT INTO dentists (`id`,`fname`,`lname`,`email`,`password`)
         VALUES (null,'$this->fname','$this->lname','$this->email','$this->password')";
         $result= $mysqli->query($query);
+        if ($mysqli->query($query) === TRUE) {
+            $last_id = $mysqli->insert_id;
+            $_SESSION['dentistid'] = $last_id;
+            echo "New record created successfully. Last inserted ID is: " . $last_id;
+          } else {
+            echo "Error: " . $query . "<br>" . $mysqli->error;
+          }
         return $result;
       }
 
@@ -56,7 +63,17 @@ class users{
     public function allpatients(){
         $db = dbconnect::getInstance();
         $mysqli = $db->getConnection();
-        $query = "SELECT * from users WHERE ut_id=2";
+    
+        $query = "SELECT patient.fname as patientfname, patient.lname as patientlname ,patient.numberVisits, patient.phonenumber , patient.dentistID, dentists.fname as dentistfname , dentists.lname as dentistlname from patient join dentists where patient.dentistID = dentists.id";
+        $result= $mysqli->query($query);
+        return $result;
+    }
+
+    public function doctorspatients(){
+        $db = dbconnect::getInstance();
+        $mysqli = $db->getConnection();
+        $doctorid = $_SESSION['id'];
+        $query = "SELECT patient.fname as patientfname, patient.lname as patientlname ,patient.numberVisits, patient.phonenumber , patient.dentistID, dentists.fname as dentistfname , dentists.lname as dentistlname from patient join dentists where patient.dentistID = dentists.id and dentists.id = $doctorid";
         $result= $mysqli->query($query);
         return $result;
     }

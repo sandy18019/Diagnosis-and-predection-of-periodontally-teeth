@@ -35,7 +35,11 @@ REQUIRE_ONCE "../view/view.php";
                 <div class="position-sticky pt-3">
                     <ul class="nav flex-column">
                         <li class="nav-item  mb-2">
+<<<<<<< Updated upstream
                             <a class="nav-link  text-white" href="adminPatientList.php">
+=======
+                            <a class="nav-link  text-white" href="../admin/adminPatientList.php">
+>>>>>>> Stashed changes
                                 <i class="fas fa-users"></i>
                                 Patients
                             </a>

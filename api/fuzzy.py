@@ -642,9 +642,27 @@ class FuzzyLogic:
         self.res = perio_ctrl_sil.print_state()
         self.output = list(perio_ctrl_sil.output.items())[0][1]
 
+<<<<<<< Updated upstream
 
 
 
+=======
+        results = []
+
+        db_counter = 0
+
+        for i in range((len(results))):
+            
+            if results[i]:
+                if db_counter ==0:
+                    #Insert in db first field  "mild: value"
+                    db_counter+=1
+                elif db_counter==1:
+                    #insert in db second field
+                    db_counter +=1
+                else:
+                    break
+>>>>>>> Stashed changes
         # print(self.output)
         # print(perio_ctrl_sil.output)
         # print(self.res)

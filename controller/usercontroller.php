@@ -64,8 +64,7 @@ class usercontroller{
         $conpass= $_REQUEST['confirmPassword'];
         if($user->password==$conpass)
         {
-          $user->AddDentist();
-            
+          $result = $user->AddDentist();
         }
     }
 
