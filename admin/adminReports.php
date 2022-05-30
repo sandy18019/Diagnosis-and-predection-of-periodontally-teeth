@@ -27,9 +27,15 @@ REQUIRE_ONCE "../view/view.php";
     </header>    
     <div class="container-fluid">
         <div class="row">
-            <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-dark sidebar collapse ">
+        <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-dark sidebar collapse ">
                 <div class="position-sticky pt-3">
                     <ul class="nav flex-column">
+                        <li class="nav-item  mb-2">
+                            <a class="nav-link  text-white" href="adminPatientList.php">
+                                <i class="fas fa-users"></i>
+                                Patients
+                            </a>
+                        </li>
                         <li class="nav-item  mb-2">
                             <a class="nav-link  text-white" href="dentists.php">
                                 <i class="fas fa-stethoscope"></i>
@@ -37,20 +43,28 @@ REQUIRE_ONCE "../view/view.php";
                             </a>
                         </li>
                         <li class="nav-item  mb-2">
-                            <a class="nav-link  text-white" href="adminPatientList.php">
-                                <i class="fas fa-users"></i>
-                                Patients
+                            <a class="nav-link  text-white" href="adminReports.php">
+                              <i class="fas fa-file"></i>
+                                Reports
+                            </a>
+                        </li>
+                        <li class="nav-item  mb-2">
+                            <a class="nav-link text-white" href="editaccount.php">
+                             <i class="fa fa-edit"></i>
+                              Edit Account
                             </a>
                         </li>
                     </ul>
                     <div class="border-top border-light p-3 mb-4 mt-5">
 
                         <div class="text-center">
-                            <a href="logout.php" class="btn btn-outline-danger">Log Out</a>
+                            <a href="../logout.php" class="btn btn-outline-danger">Log Out</a>
                         </div>
+
                     </div>
                 </div>
             </nav>
+
             <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4 bg-light">
                 <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
                     <h1>Reports</h1>

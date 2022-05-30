@@ -27,32 +27,38 @@ REQUIRE_ONCE "../view/view.php";
     </header>
     <div class="container-fluid">
         <div class="row">
-            <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-dark sidebar collapse ">
+        <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-dark sidebar collapse ">
                 <div class="position-sticky pt-3">
                     <ul class="nav flex-column">
-                    <li class="nav-item  mb-2">
-                            <a class="nav-link  text-white" href="dentist.php">
+                        <li class="nav-item  mb-2">
+                            <a class="nav-link  text-white" href="adminPatientList.php">
+                                <i class="fas fa-users"></i>
+                                Patients
+                            </a>
+                        </li>
+                        <li class="nav-item  mb-2">
+                            <a class="nav-link  text-white" href="dentists.php">
                                 <i class="fas fa-stethoscope"></i>
                                 Dentists
                             </a>
                         </li>
                         <li class="nav-item  mb-2">
-                            <a class="nav-link  text-white" href="reports.php">
+                            <a class="nav-link  text-white" href="adminReports.php">
                               <i class="fas fa-file"></i>
                                 Reports
                             </a>
                         </li>
                         <li class="nav-item  mb-2">
                             <a class="nav-link text-white" href="editaccount.php">
-                             <i class="fa fa-key"></i>
-                                Edit Account
+                             <i class="fa fa-edit"></i>
+                              Edit Account
                             </a>
                         </li>
                     </ul>
                     <div class="border-top border-light p-3 mb-4 mt-5">
 
                         <div class="text-center">
-                            <a href="logout.php" class="btn btn-outline-danger">Log Out</a>
+                            <a href="../logout.php" class="btn btn-outline-danger">Log Out</a>
                         </div>
 
                     </div>

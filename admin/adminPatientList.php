@@ -16,48 +16,58 @@
 </head>
 <body>
 <header class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
-        <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3" href="#">Periodontal Clinic</a>
+        <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3" href="#">PerioDect</a>
     </header>
     <div class="container-fluid">
         <div class="row">
-            <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-dark sidebar collapse ">            <div class="position-sticky pt-3">
+        <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-dark sidebar collapse ">
+                <div class="position-sticky pt-3">
                     <ul class="nav flex-column">
+                        <li class="nav-item  mb-2">
+                            <a class="nav-link  text-white" href="adminPatientList.php">
+                                <i class="fas fa-users"></i>
+                                Patients
+                            </a>
+                        </li>
                         <li class="nav-item  mb-2">
                             <a class="nav-link  text-white" href="dentists.php">
                                 <i class="fas fa-stethoscope"></i>
                                 Dentists
                             </a>
-                        </li>           
+                        </li>
                         <li class="nav-item  mb-2">
                             <a class="nav-link  text-white" href="adminReports.php">
-                                <i class="fas fa-file"></i>
+                              <i class="fas fa-file"></i>
                                 Reports
                             </a>
                         </li>
                         <li class="nav-item  mb-2">
                             <a class="nav-link text-white" href="editaccount.php">
-                                <i class="fas fa-key"></i>
-                                Edit account
+                             <i class="fa fa-edit"></i>
+                              Edit Account
                             </a>
                         </li>
                     </ul>
                     <div class="border-top border-light p-3 mb-4 mt-5">
+
                         <div class="text-center">
-                            <a href="logoutadmin.php" class="btn btn-outline-danger">Log Out</a>
+                            <a href="../logout.php" class="btn btn-outline-danger">Log Out</a>
                         </div>
+
                     </div>
                 </div>
             </nav>
-            <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4 bg-secondary">
+
+            <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4 bg-light">
                 <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-                    <h1 class="h2">All Patients</h1>
+                    <h1>All Patients</h1>
                 </div>
                 <div class="container">
                     <div class="row justify-content-md-center">
                         <div class="col-md-11">
                             <div class="card">
-                                <div class="card-header bg-secondary">
-                                    Patients list
+                                <div class="card-header bg-dark">
+                                    ---
                                 </div>
                                 <div class="card-body">
                                     <table id="example" class="table  responsive nowrap  table-responsive-sm" style="width:100%">

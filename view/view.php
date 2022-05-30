@@ -197,7 +197,7 @@ public function viewdentists($users)
                     </table>
                 </div>
                 <tfoot>
-                  <a class="btn btn-dark" href="admin/addDentist.php" role="button">add dentist</a>
+                  <a class="btn btn-dark" href="addDentist.php" role="button">add dentist</a>
                     
                 </tfoot>
             </div>
@@ -279,6 +279,5 @@ public function addDentists()
 </div>';
     echo $str;
 }
-
 
 }?>
