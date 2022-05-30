@@ -71,13 +71,13 @@ REQUIRE_ONCE "../view/view.php";
                 <div class="container">
                     <div class="row justify-content-md-center">
                         <div class="col-md-11">
-<<<<<<< Updated upstream
+<!-- <<<<<<< Updated upstream
                             <div class="card">
                                 <div class="card-header bg-dark">
                                     ---
                                 </div>
-                                <div class="card-body">
-=======
+                                <div class="card-body"> -->
+
                             <!-- <div class="card">
                                 <div class="card-header bg-secondary">
                                     Patients list
