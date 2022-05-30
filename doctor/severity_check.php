@@ -19,38 +19,42 @@ REQUIRE_ONCE "../view/view.php";
     <title>Measurements Form</title>
 </head>
 <body>
+
     <header class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
         <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3" href="#">PerioDect</a>
-    </header>
+
+
+    </header>    
     <div class="container-fluid">
         <div class="row">
             <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-dark sidebar collapse ">
                 <div class="position-sticky pt-3">
                     <ul class="nav flex-column">
-                    <li class="nav-item  mb-2">
-                            <a class="nav-link  text-white" href="dentists.php">
+                        <li class="nav-item  mb-2">
+                            <a class="nav-link  text-white" href="doctorPatientlist.php">
                                 <i class="fas fa-users"></i>
-                                Dentists
+                                Patients
                             </a>
                         </li>
                         <li class="nav-item  mb-2">
-                            <a class="nav-link  text-white" href="reports.php">
-                              <i class="fas fa-stethoscope"></i>
-                                Reports
+                            <a class="nav-link  text-white" href="picturetesting.php">
+                              <i class="fas fa-file"></i>
+                                Check-up
                             </a>
                         </li>
                         <li class="nav-item  mb-2">
-                            <a class="nav-link text-white" href="editaccount.php">
-                             <i class="fa fa-user"></i>
-                                Edit Account
+                            <a class="nav-link text-white" href="severity_check.php">
+                             <i class="fa fa-edit"></i>
+                              Measurments
                             </a>
                         </li>
                     </ul>
                     <div class="border-top border-light p-3 mb-4 mt-5">
 
                         <div class="text-center">
-                            <a href="logout.php" class="btn btn-outline-danger">Log Out</a>
+                            <a href="../logout.php" class="btn btn-outline-danger">Log Out</a>
                         </div>
+
                     </div>
                 </div>
             </nav>

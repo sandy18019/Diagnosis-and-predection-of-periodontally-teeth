@@ -21,38 +21,48 @@ REQUIRE_ONCE "../view/view.php";
 </head>
 
 <body>
+
     <header class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
-        <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3" href="#">Periodontal clinic</a>
-    </header>
+        <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3" href="#">PerioDect</a>
+
+
+    </header>    
     <div class="container-fluid">
         <div class="row">
             <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-dark sidebar collapse ">
-                <div class="position-sticky pt-2" >
-                    <ul class="nav flex-column">    
-                        <li class="nav-item  mb-1">
-                            <a class="nav-link  text-white" href="viewSchedule.php">
+                <div class="position-sticky pt-3">
+                    <ul class="nav flex-column">
+                        <li class="nav-item  mb-2">
+                            <a class="nav-link  text-white" href="doctorPatientlist.php">
                                 <i class="fas fa-users"></i>
                                 Patients
                             </a>
                         </li>
                         <li class="nav-item  mb-2">
-                            <a class="nav-link text-white" href="editaccountDR.php">
-                                <i class="fas fa-key"></i>
-                                View account
+                            <a class="nav-link  text-white" href="picturetesting.php">
+                              <i class="fas fa-file"></i>
+                                Check-up
+                            </a>
+                        </li>
+                        <li class="nav-item  mb-2">
+                            <a class="nav-link text-white" href="severity_check.php">
+                             <i class="fa fa-edit"></i>
+                              Measurments
                             </a>
                         </li>
                     </ul>
-                    
                     <div class="border-top border-light p-3 mb-4 mt-5">
+
                         <div class="text-center">
-                            <a href="logoutadmin.php" class="btn btn-outline-danger">Log Out</a>
+                            <a href="../logout.php" class="btn btn-outline-danger">Log Out</a>
                         </div>
+
                     </div>
                 </div>
             </nav>
-            <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4 bg-secondary">
+            <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4 bg-light">
                 <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-                    <h1 class="h2">Check Image</h1>
+                    <h1>Check Image</h1>
                 </div>
                 <div class="container col-md-6">
                     <div class="mb-5">
@@ -67,10 +77,10 @@ REQUIRE_ONCE "../view/view.php";
                         <form action="../controller/patientcontroller.php?action=upload" method="post" enctype="multipart/form-data">
                             <input name="imageupload" class="form-control" type="file" id="formFile" onchange="preview()">
                             <!-- <button name="save" class="btn btn-primary mt-3">Check Image</button> -->
-                            <input type="submit" name="save" value="Upload" class="btn btn-primary mt-3">
+                            <input type="submit" name="save" value="Upload" class="btn btn-dark mt-3">
                         </form>
                         
-                        <button onclick="window.location.href='severity_check.php'" class="btn btn-primary mt-3">Take measurement</button>
+                        <button onclick="window.location.href='severity_check.php'" class="btn btn-dark mt-3">Take measurement</button>
                     </div>
                     <img id="frame" src="" class="img-fluid" />
                 </div>

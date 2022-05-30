@@ -16,37 +16,48 @@
 </head>
 
 <body>
+
     <header class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
-        <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3" href="#">Periodontal Clinic</a>
-    </header>
+        <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3" href="#">PerioDect</a>
+
+
+    </header>    
     <div class="container-fluid">
         <div class="row">
             <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-dark sidebar collapse ">
-                <div class="position-sticky pt-2" >
-                    <ul class="nav flex-column">    
-                        <li class="nav-item  mb-1">
-                            <a class="nav-link  text-white" href="viewSchedule.php">
-                                <i class="fas fa-shopping-cart"></i>
-                                Appointments
+                <div class="position-sticky pt-3">
+                    <ul class="nav flex-column">
+                        <li class="nav-item  mb-2">
+                            <a class="nav-link  text-white" href="doctorPatientlist.php">
+                                <i class="fas fa-users"></i>
+                                Patients
                             </a>
                         </li>
                         <li class="nav-item  mb-2">
-                            <a class="nav-link text-white" href="editaccountDR.php">
-                                <i class="fas fa-key"></i>
-                                View account
+                            <a class="nav-link  text-white" href="picturetesting.php">
+                              <i class="fas fa-file"></i>
+                                Check-up
+                            </a>
+                        </li>
+                        <li class="nav-item  mb-2">
+                            <a class="nav-link text-white" href="severity_check.php">
+                             <i class="fa fa-edit"></i>
+                              Measurments
                             </a>
                         </li>
                     </ul>
                     <div class="border-top border-light p-3 mb-4 mt-5">
+
                         <div class="text-center">
-                            <a href="logoutadmin.php" class="btn btn-outline-danger">Log Out</a>
+                            <a href="../logout.php" class="btn btn-outline-danger">Log Out</a>
                         </div>
+
                     </div>
                 </div>
             </nav>
-            <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4 bg-secondary">
+            <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4 bg-light">
                 <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-                    <h1 class="h2">Add Patient</h1>
+                    <h1>Add Patient</h1>
                 </div>
                 <div class="col-md-10 col-lg-10 ml-auto">
                     <form id="register-form" method="POST" action="../controller/patientcontroller.php?action=add">
